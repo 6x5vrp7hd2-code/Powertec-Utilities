@@ -1,11 +1,13 @@
-const btn=document.querySelector('.menu-toggle');
+
+const button=document.querySelector('.menu-toggle');
 const nav=document.querySelector('.navlinks');
-if(btn&&nav){
-  btn.addEventListener('click',()=>{
+if(button&&nav){
+  button.addEventListener('click',()=>{
     const open=nav.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true':'false');
+    button.setAttribute('aria-expanded',open?'true':'false');
   });
   nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    nav.classList.remove('open'); btn.setAttribute('aria-expanded','false');
+    nav.classList.remove('open');
+    button.setAttribute('aria-expanded','false');
   }));
 }

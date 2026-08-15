@@ -1,9 +1,14 @@
-POWERTEC UTILITIES — FULL NAVIGATION FIX
+POWERTEC UTILITIES — REFERENCE STYLE FINAL
 
-This version fixes:
-- Mobile navigation: Home, About, Services, Sectors and Contact are now accessible from a hamburger menu.
-- Hero image: now uses a normal image element instead of a CSS background, making it reliable on GitHub Pages/iPhone.
-- All existing separate pages are retained.
+This version has been rebuilt to closely follow the approved reference designs:
+- White corporate header with full desktop navigation
+- High Voltage photographic hero
+- Four-column service strip
+- Separate About, Services, Sectors & Experience and Contact pages
+- Dark photographic internal-page headers
+- Powertec orange/black/white visual system
+- Responsive mobile hamburger navigation
+- Images retained and referenced from the repository root for reliable GitHub Pages hosting
 
-UPLOAD ALL FILES IN THIS PACKAGE TO THE ROOT OF THE EXISTING GITHUB REPOSITORY AND COMMIT CHANGES.
-Do not delete about.html, services.html, sectors.html or contact.html.
+UPLOAD ALL FILES IN THIS ZIP TO THE ROOT OF THE EXISTING Powertec-Utilities GITHUB REPOSITORY.
+Select all files, upload, and Commit changes. Existing same-named files will be replaced.
