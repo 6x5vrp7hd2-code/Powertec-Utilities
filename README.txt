@@ -1,0 +1,1 @@
+Replacement Powertec website matching the earlier approved visual mock-up. Upload all files/folders to the GitHub repository root and commit changes.
