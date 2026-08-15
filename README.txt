@@ -1,31 +1,9 @@
-POWERTEC UTILITIES — GITHUB FIXED VERSION
+POWERTEC UTILITIES — FULL NAVIGATION FIX
 
-This package fixes the missing logo / hero / banner images visible on the live GitHub Pages site.
+This version fixes:
+- Mobile navigation: Home, About, Services, Sectors and Contact are now accessible from a hamburger menu.
+- Hero image: now uses a normal image element instead of a CSS background, making it reliable on GitHub Pages/iPhone.
+- All existing separate pages are retained.
 
-WHY IT FAILED
-The image files were uploaded to the repository ROOT from iPhone, but the website code was looking for them inside an /images/ folder.
-
-THIS VERSION
-All images are intentionally kept in the repository root and all HTML/CSS references have been corrected to match.
-
-UPLOAD / REPLACE THESE FILES IN THE REPOSITORY ROOT:
-index.html
-about.html
-services.html
-sectors.html
-contact.html
-styles.css
-README.txt
-logo.png
-hero.jpg
-about-banner.jpg
-services-banner.jpg
-sectors-banner.jpg
-contact-banner.jpg
-sector-distribution.jpg
-sector-datacentre.jpg
-sector-infrastructure.jpg
-favicon.png
-
-Do NOT create an images folder for this version.
-GitHub Pages should redeploy automatically after Commit changes.
+UPLOAD ALL FILES IN THIS PACKAGE TO THE ROOT OF THE EXISTING GITHUB REPOSITORY AND COMMIT CHANGES.
+Do not delete about.html, services.html, sectors.html or contact.html.
