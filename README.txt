@@ -1,6 +1,4 @@
-POWERTEC UTILITIES LTD WEBSITE
-
-Open index.html in a browser to preview.
+POWERTEC UTILITIES LTD WEBSITE — UPDATED VERSION
 
 Files:
 - index.html
@@ -9,14 +7,18 @@ Files:
 - privacy.html
 - favicon.svg
 
-Deployment:
-1. Upload these files to a GitHub repository.
-2. Connect the repository to Cloudflare Pages.
-3. No build command is required.
-4. Add powertec-utilities.com as the custom domain.
+TO UPDATE THE LIVE GITHUB PAGES SITE
+1. Open your Powertec-Utilities repository on github.com in Safari.
+2. Choose Add file > Upload files.
+3. Upload index.html, styles.css, script.js, privacy.html and favicon.svg from this package.
+4. GitHub will warn that files already exist. That is expected: these are replacements.
+5. Scroll down and tap Commit changes.
+6. Wait 1–3 minutes and refresh your GitHub Pages website.
 
-Before publishing:
-- Replace the Hotmail address if you create a domain email address.
-- Add the correct LinkedIn company-page URL if wanted.
-- Consider replacing the mailto enquiry form with a hosted form service.
-- Review the privacy notice once analytics/forms are final.
+CUSTOM DOMAIN
+When ready, go to repository Settings > Pages > Custom domain and enter:
+powertec-utilities.com
+
+NOTES
+- The contact section uses direct email/telephone links; no third-party form service is required.
+- Existing project/experience statements were retained rather than adding unverified clients, qualifications or testimonials.

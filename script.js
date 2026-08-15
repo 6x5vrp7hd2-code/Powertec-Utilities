@@ -1,1 +1,5 @@
-const b=document.querySelector(".menuBtn"),m=document.querySelector(".menu");if(b&&m){b.addEventListener("click",()=>m.classList.toggle("open"));m.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>m.classList.remove("open")));}const y=document.getElementById("year");if(y)y.textContent=new Date().getFullYear();
+const menuBtn=document.querySelector('.menuBtn');
+const menu=document.querySelector('.menu');
+menuBtn?.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'×':'☰';});
+document.querySelectorAll('.menu a').forEach(a=>a.addEventListener('click',()=>{menu?.classList.remove('open');menuBtn?.setAttribute('aria-expanded','false');if(menuBtn)menuBtn.textContent='☰';}));
+document.getElementById('year').textContent=new Date().getFullYear();
