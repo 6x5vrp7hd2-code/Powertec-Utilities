@@ -1,13 +1,54 @@
-POWERTEC UTILITIES WEBSITE — REWRITE V2
+POWERTEC UTILITIES — CORPORATE WEBSITE TRIAL
 
-This package includes:
-- Revised Home, About, Services, Sectors & Experience and Contact pages
-- Mission and Vision statements on the About page
-- Core Values & Focus Areas
-- Expanded company approach / service / sector copy
-- Redesigned dark footer without the white logo box
-- Higher-resolution / sharpened image assets where available
-- Mobile navigation and responsive layouts
+PAGES
+-----
+index.html          Home
+about.html          About / Mission / Vision / Values
+services.html       Services
+sectors.html        Sector overview
+data-centres.html   Data Centres & Critical Infrastructure
+utilities.html      Utilities & Infrastructure
+projects.html       Project Experience
+hseq.html           HSEQ & Operational Excellence
+careers.html        Careers / Register Interest
+contact.html        Contact / Project Enquiries
 
-UPLOAD ALL FILES IN THIS ZIP TO THE ROOT OF THE EXISTING Powertec-Utilities GITHUB REPOSITORY.
-Existing same-named files should be replaced, then Commit changes.
+SHARED FILES
+------------
+styles.css
+script.js
+logo.png
+footer-logo.png
+favicon.png
+hero.jpg
+commissioning.jpg
+critical-power.jpg
+utilities.jpg
+
+IMPORTANT
+---------
+Each HTML page contains ONE header and ONE footer only.
+The navigation is shared in design and links across all pages.
+The footer uses the dark Powertec logo treatment — no white logo box.
+
+GITHUB TRIAL UPDATE
+-------------------
+Upload ALL files from this folder to the ROOT of your existing Powertec-Utilities repository.
+Files with matching names will replace the current trial files.
+Commit changes and wait for GitHub Pages to redeploy.
+
+This is a website trial for visual/content review. A professional developer can refine performance,
+forms, legal pages, CMS, analytics, accessibility and production-grade imagery before final launch.
+
+
+VERSION 2 IMAGE UPDATE
+----------------------
+This version also includes genuine Powertec/engineering photographs supplied for the trial:
+- Powertec branded vehicle
+- utility/substation imagery
+- overhead network imagery
+- switchgear/infrastructure imagery
+- testing and commissioning photographs
+
+These are used selectively across Home, About, Services, Utilities, Projects and HSEQ.
+Data-centre pages continue to use anonymous professional imagery for client/project discretion.
