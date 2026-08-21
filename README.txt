@@ -23,7 +23,6 @@ favicon.png
 hero.jpg
 commissioning.jpg
 critical-power.jpg
-utilities.jpg
 
 IMPORTANT
 ---------
@@ -64,3 +63,12 @@ VERSION 3 — MOBILE FIX
 - Tightened/cropped the header logo treatment.
 - Corrected mobile navigation and page-wide responsive layout.
 - Applied the same mobile fixes across all pages.
+
+
+VERSION 4 — VERIFIED REBUILD
+----------------------------
+- Removed the mock-up/sample-board-derived image completely.
+- Rebuilt the homepage hero as a true CSS background section.
+- Added a new stylesheet filename (styles-v4.css?v=4) to bypass Safari/GitHub Pages cache.
+- Replaced the header logo with the transparent original Powertec artwork.
+- Verified mobile rendering locally at iPhone-size viewport before packaging.
