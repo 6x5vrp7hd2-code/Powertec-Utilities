@@ -178,3 +178,172 @@ h2{font-size:clamp(32px,4vw,52px);margin:0 0 18px}
  .photo-grid,.project-gallery{grid-template-columns:1fr}
  .photo-grid img,.photo-grid img:first-child,.project-gallery img{height:220px}
 }
+
+
+/* ===== MOBILE RESPONSIVE FIX PASS ===== */
+@media(max-width:760px){
+  body{overflow-x:hidden}
+  .wrap{width:calc(100% - 28px)}
+  .site-header,.nav{height:68px}
+  .site-header{position:sticky;top:0;background:#fff}
+  .logo{width:172px;height:auto;object-fit:contain}
+  .menu-toggle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:42px;height:42px;
+    border:1px solid #d9d9d9;
+    background:#fff;
+    color:#1787d8;
+    font-size:22px;
+    padding:0
+  }
+  .navlinks{
+    display:none;
+    position:absolute;
+    top:68px;left:-14px;right:-14px;
+    background:#fff;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    padding:6px 14px 12px;
+    box-shadow:0 12px 28px rgba(0,0,0,.14);
+    border-top:1px solid #eee
+  }
+  .navlinks.open{display:flex}
+  .navlinks a{padding:13px 8px;border-bottom:1px solid #eee}
+  .navlinks a.active{border-bottom:1px solid #eee}
+  .navlinks .enquire{margin:10px 0 0;text-align:center;border:0!important;padding:14px}
+
+  .hero{
+    background:#111;
+    position:relative;
+    overflow:hidden
+  }
+  .hero-grid{
+    display:block;
+    min-height:0;
+    position:relative
+  }
+  .hero-photo{
+    position:absolute;
+    inset:0;
+    min-height:100%;
+    z-index:0
+  }
+  .hero-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    filter:brightness(.58) saturate(.9)
+  }
+  .hero-photo:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,rgba(0,0,0,.60) 0%,rgba(0,0,0,.72) 60%,rgba(0,0,0,.86) 100%)
+  }
+  .hero-copy{
+    position:relative;
+    z-index:2;
+    padding:54px 0 48px;
+    min-height:620px;
+    justify-content:flex-end
+  }
+  .hero .eyebrow{
+    color:#f58220!important;
+    opacity:1!important;
+    font-size:11px;
+    letter-spacing:.14em;
+    margin-bottom:14px
+  }
+  .hero h1{
+    color:#fff!important;
+    font-size:39px!important;
+    line-height:.98!important;
+    letter-spacing:-.025em;
+    margin:0 0 18px!important;
+    max-width:100%
+  }
+  .hero-kicker{
+    color:#fff!important;
+    font-size:17px!important;
+    line-height:1.35;
+    margin-bottom:15px
+  }
+  .hero p{
+    color:#e8e8e8!important;
+    font-size:15px!important;
+    line-height:1.55;
+    margin:0 0 14px
+  }
+  .hero-copy > p:nth-of-type(n+3){display:none}
+  .hero-copy div:last-child{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:8px
+  }
+  .hero .btn{
+    margin:0!important;
+    width:100%;
+    text-align:center;
+    padding:14px 16px;
+    font-size:12px
+  }
+  .hero .btn-outline{
+    background:rgba(0,0,0,.18);
+    border:1px solid rgba(255,255,255,.75);
+    color:#fff
+  }
+
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .stat{padding:23px 10px}
+  .stat strong{font-size:27px}
+  .stat span{font-size:9px;line-height:1.25;display:block;margin-top:6px}
+
+  .section{padding:52px 0}
+  .section-head{margin-bottom:26px}
+  h2{font-size:32px}
+  .lead{font-size:16px}
+  .grid-4,.grid-3,.grid-2,.principles{grid-template-columns:1fr}
+  .card{padding:23px}
+  .image-split{display:block}
+  .image-split .image{min-height:260px}
+  .image-split .copy{padding:34px 22px}
+  .page-hero{height:250px;background-position:center}
+  .page-hero h1{font-size:38px}
+  .page-hero p{font-size:15px}
+
+  .authenticity{padding:48px 0}
+  .auth-grid{grid-template-columns:1fr}
+  .auth-image{min-height:260px}
+  .auth-copy{padding-top:8px}
+
+  .photo-grid,.project-gallery{grid-template-columns:1fr}
+  .photo-grid img,.photo-grid img:first-child,.project-gallery img{
+    height:220px;
+    object-fit:cover
+  }
+
+  .case{grid-template-columns:1fr}
+  .case-copy{padding:28px 22px}
+  .case-image img{min-height:250px}
+  .process{grid-template-columns:1fr}
+  .cap-list{grid-template-columns:1fr}
+  .cap-list li{font-size:13px}
+
+  .contact-grid{grid-template-columns:1fr;gap:36px}
+  .contact-form{grid-template-columns:1fr}
+  .contact-form textarea,.contact-form button{grid-column:1}
+
+  .footer-top{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+  .footer-brand img{width:160px}
+  .footer-bottom{flex-direction:column;gap:8px}
+}
+
+/* Fix legacy white-on-white issue if hero image fails */
+.hero, .hero *{text-shadow:none}
+.hero-copy{color:#fff}

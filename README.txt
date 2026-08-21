@@ -52,3 +52,15 @@ This version also includes genuine Powertec/engineering photographs supplied for
 
 These are used selectively across Home, About, Services, Utilities, Projects and HSEQ.
 Data-centre pages continue to use anonymous professional imagery for client/project discretion.
+
+
+VERSION 3 — MOBILE FIX
+----------------------
+- Rebuilt the mobile homepage hero so the image sits behind the content correctly.
+- Added a darker overlay for reliable white text contrast.
+- Reduced mobile headline size and tightened spacing.
+- Hid excess hero copy from the first mobile viewport.
+- Stacked CTAs correctly.
+- Tightened/cropped the header logo treatment.
+- Corrected mobile navigation and page-wide responsive layout.
+- Applied the same mobile fixes across all pages.
