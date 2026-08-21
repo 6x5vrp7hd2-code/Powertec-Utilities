@@ -72,3 +72,15 @@ VERSION 4 — VERIFIED REBUILD
 - Added a new stylesheet filename (styles-v4.css?v=4) to bypass Safari/GitHub Pages cache.
 - Replaced the header logo with the transparent original Powertec artwork.
 - Verified mobile rendering locally at iPhone-size viewport before packaging.
+
+
+VERSION 5 — PROFESSIONAL CONTENT PASS
+-------------------------------------
+- Removed visible numbering from cards and section labels.
+- Increased content depth and corporate detail.
+- Reworked Services into four substantial service sections.
+- Removed tightly grouped image mosaics.
+- Replaced galleries with single, contextual feature images and captions.
+- Increased spacing between image and text sections.
+- Added deeper corporate positioning on the homepage.
+- Added cache-busting to the stylesheet reference.
