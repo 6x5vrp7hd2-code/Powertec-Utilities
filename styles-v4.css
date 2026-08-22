@@ -434,3 +434,252 @@ h2{font-size:clamp(32px,4vw,52px);margin:0 0 18px}
   .process{grid-template-columns:1fr}
   .step{min-height:0}
 }
+
+
+/* ===== POWERTEC HERO BRAND WATERMARK ===== */
+.hero-v4 .hero-brand-watermark{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+  overflow:hidden;
+}
+.hero-v4 .hero-brand-watermark img{
+  width:min(84vw,1180px);
+  max-width:none;
+  height:auto;
+  opacity:0;
+  filter:grayscale(1) brightness(2.7) contrast(.65);
+  transform:scale(.92);
+  animation:powertecBrandFade 10s ease-in-out infinite;
+}
+@keyframes powertecBrandFade{
+  0%,100%{opacity:0;transform:scale(.92)}
+  18%{opacity:.045;transform:scale(.97)}
+  45%{opacity:.115;transform:scale(1.015)}
+  62%{opacity:.115;transform:scale(1.015)}
+  86%{opacity:.04;transform:scale(.97)}
+}
+
+/* Hero photograph overlay remains behind branding and copy */
+.hero-v4:before{z-index:0}
+.hero-v4 .hero-v4-inner{z-index:2}
+
+/* Mobile treatment — larger, slower and deliberately subtle */
+@media(max-width:760px){
+  .hero-v4 .hero-brand-watermark{
+    align-items:center;
+    justify-content:center;
+  }
+  .hero-v4 .hero-brand-watermark img{
+    width:155vw;
+    max-width:none;
+    opacity:0;
+    transform:scale(.9);
+    animation:powertecBrandFadeMobile 9s ease-in-out infinite;
+  }
+  @keyframes powertecBrandFadeMobile{
+    0%,100%{opacity:0;transform:scale(.90)}
+    22%{opacity:.035;transform:scale(.96)}
+    48%{opacity:.085;transform:scale(1.02)}
+    64%{opacity:.085;transform:scale(1.02)}
+    86%{opacity:.03;transform:scale(.96)}
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-v4 .hero-brand-watermark img{
+    animation:none!important;
+    opacity:.07;
+    transform:none;
+  }
+}
+
+
+/* ===== V8 BRAND COLOUR / GRAPHIC ENHANCEMENT ===== */
+.hero-v4 .hero-brand-watermark img{
+  width:min(92vw,1280px);
+  opacity:0;
+  filter:none;
+  mix-blend-mode:screen;
+  animation:powertecBrandFadeV8 9s ease-in-out infinite;
+  transform:scale(.92);
+}
+@keyframes powertecBrandFadeV8{
+  0%,100%{opacity:0;transform:scale(.92)}
+  16%{opacity:.08;transform:scale(.97)}
+  42%{opacity:.20;transform:scale(1.02)}
+  60%{opacity:.20;transform:scale(1.02)}
+  84%{opacity:.08;transform:scale(.97)}
+}
+@media(max-width:760px){
+  .hero-v4 .hero-brand-watermark img{
+    width:170vw;
+    max-width:none;
+    animation:powertecBrandFadeMobileV8 8s ease-in-out infinite;
+  }
+  @keyframes powertecBrandFadeMobileV8{
+    0%,100%{opacity:0;transform:scale(.92)}
+    18%{opacity:.06;transform:scale(.96)}
+    45%{opacity:.15;transform:scale(1.02)}
+    62%{opacity:.15;transform:scale(1.02)}
+    84%{opacity:.06;transform:scale(.96)}
+  }
+}
+
+/* Animated branded watermark on internal page heroes */
+.page-hero{position:relative;overflow:hidden}
+.page-hero .page-brand-watermark{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  overflow:hidden;
+}
+.page-hero .page-brand-watermark img{
+  width:min(54vw,760px);
+  max-width:none;
+  opacity:0;
+  filter:none;
+  mix-blend-mode:screen;
+  transform:translateX(8%) scale(.94);
+  animation:pageBrandFade 11s ease-in-out infinite;
+}
+.page-hero .wrap{position:relative;z-index:2}
+@keyframes pageBrandFade{
+  0%,100%{opacity:0;transform:translateX(8%) scale(.94)}
+  20%{opacity:.06;transform:translateX(5%) scale(.98)}
+  48%{opacity:.14;transform:translateX(2%) scale(1.01)}
+  66%{opacity:.14;transform:translateX(2%) scale(1.01)}
+  88%{opacity:.05;transform:translateX(5%) scale(.98)}
+}
+@media(max-width:760px){
+  .page-hero .page-brand-watermark{
+    justify-content:center;
+  }
+  .page-hero .page-brand-watermark img{
+    width:145vw;
+    animation:pageBrandFadeMobile 9s ease-in-out infinite;
+  }
+  @keyframes pageBrandFadeMobile{
+    0%,100%{opacity:0;transform:scale(.94)}
+    22%{opacity:.045;transform:scale(.98)}
+    50%{opacity:.10;transform:scale(1.02)}
+    66%{opacity:.10;transform:scale(1.02)}
+    88%{opacity:.04;transform:scale(.98)}
+  }
+}
+
+/* Subtle orange graphic rule to lift plain content sections */
+.section-head:after,
+.content-block h2:after{
+  content:"";
+  display:block;
+  width:72px;
+  height:4px;
+  background:linear-gradient(90deg,var(--orange),transparent);
+  margin-top:18px;
+}
+.card{
+  position:relative;
+  overflow:hidden;
+}
+.card:before{
+  content:"";
+  position:absolute;
+  right:-34px;
+  top:-34px;
+  width:110px;
+  height:110px;
+  border:2px solid rgba(245,130,32,.14);
+  border-radius:50%;
+}
+.card:after{
+  content:"";
+  position:absolute;
+  right:-12px;
+  top:-12px;
+  width:52px;
+  height:52px;
+  border:2px solid rgba(245,130,32,.10);
+  border-radius:50%;
+}
+.card > *{position:relative;z-index:1}
+
+/* Refine hero watermark so brand colours remain visible over dark photography */
+.hero-v4:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:radial-gradient(circle at 70% 50%, rgba(245,130,32,.08), transparent 30%);
+  pointer-events:none;
+}
+.hero-v4 .hero-v4-inner{position:relative;z-index:3}
+.hero-v4 .hero-brand-watermark{z-index:2}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-v4 .hero-brand-watermark img,
+  .page-hero .page-brand-watermark img{
+    animation:none!important;
+    opacity:.10;
+    transform:none;
+  }
+}
+
+/* ===== V10 CORRECTED REQUESTS ===== */
+.homepage .site-header{display:none!important}
+.hero-v4{position:relative!important;min-height:100vh!important;overflow:hidden!important}
+.hero-v4 .hero-v4-inner{position:relative!important;z-index:4!important;min-height:100vh!important;padding-top:64px!important;padding-bottom:64px!important}
+.hero-v4 .hero-brand-watermark{
+ display:flex!important;position:absolute!important;inset:0!important;z-index:3!important;
+ align-items:center!important;justify-content:center!important;pointer-events:none!important;overflow:hidden!important
+}
+.hero-v4 .hero-brand-watermark img{
+ display:block!important;width:min(1180px,92vw)!important;max-width:none!important;height:auto!important;
+ opacity:0!important;filter:none!important;mix-blend-mode:screen!important;
+ animation:ptLogoV10 8s ease-in-out infinite!important;transform:scale(.94)!important
+}
+@keyframes ptLogoV10{
+ 0%,100%{opacity:0;transform:scale(.94)}
+ 15%{opacity:.28;transform:scale(.98)}
+ 38%{opacity:.58;transform:scale(1.015)}
+ 58%{opacity:.68;transform:scale(1.035)}
+ 78%{opacity:.32;transform:scale(1)}
+}
+.hero-v4:after{
+ content:""!important;position:absolute!important;inset:0!important;z-index:2!important;pointer-events:none!important;
+ background:linear-gradient(90deg,rgba(4,15,27,.68),rgba(4,15,27,.48) 48%,rgba(4,15,27,.24))!important
+}
+.section:not(.section-dark),.authenticity,.content-block{position:relative!important;overflow:hidden!important}
+.section:not(.section-dark)::before,.authenticity::before,.content-block::before{
+ content:""!important;position:absolute!important;inset:0!important;z-index:0!important;pointer-events:none!important;
+ background:
+ radial-gradient(circle at 92% 15%,rgba(245,130,32,.10),transparent 19%),
+ radial-gradient(circle at 8% 82%,rgba(0,134,210,.07),transparent 21%),
+ linear-gradient(120deg,transparent 0 72%,rgba(0,134,210,.03) 72% 72.7%,transparent 72.7%),
+ linear-gradient(60deg,transparent 0 80%,rgba(245,130,32,.035) 80% 80.7%,transparent 80.7%)!important
+}
+.section:not(.section-dark)>.wrap,.authenticity>.wrap,.content-block>.wrap{position:relative!important;z-index:1!important}
+.section:not(.section-dark)::after{
+ content:""!important;position:absolute!important;right:-125px!important;bottom:-145px!important;
+ width:340px!important;height:340px!important;border:28px solid rgba(245,130,32,.06)!important;border-radius:50%!important;
+ box-shadow:0 0 0 24px rgba(0,134,210,.03),inset 0 0 0 22px rgba(0,134,210,.025)!important;pointer-events:none!important
+}
+.page-hero .page-brand-watermark img{
+ filter:none!important;mix-blend-mode:screen!important;animation:ptInternalV10 10s ease-in-out infinite!important
+}
+@keyframes ptInternalV10{0%,100%{opacity:0}25%{opacity:.12}50%,65%{opacity:.26}88%{opacity:.08}}
+@media(max-width:760px){
+ .hero-v4 .hero-brand-watermark img{width:150vw!important;animation:ptLogoMobileV10 7.5s ease-in-out infinite!important}
+ @keyframes ptLogoMobileV10{
+  0%,100%{opacity:0;transform:scale(.94)}18%{opacity:.24;transform:scale(.98)}
+  42%{opacity:.54;transform:scale(1.02)}60%{opacity:.62;transform:scale(1.035)}80%{opacity:.28;transform:scale(1)}
+ }
+}
