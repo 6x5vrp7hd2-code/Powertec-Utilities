@@ -84,3 +84,16 @@ VERSION 5 — PROFESSIONAL CONTENT PASS
 - Increased spacing between image and text sections.
 - Added deeper corporate positioning on the homepage.
 - Added cache-busting to the stylesheet reference.
+
+
+VERSION 7 — HOMEPAGE BRAND ANIMATION
+------------------------------------
+This version reverts to the V5 Professional website files and changes the homepage only:
+- Large Powertec logo integrated into the homepage hero as a background watermark.
+- Logo slowly fades in, holds briefly and fades back out.
+- Subtle scale movement prevents the effect feeling static.
+- Animation is deliberately restrained so it does not compete with the headline or hero image.
+- Separate mobile animation uses a larger logo with lower opacity.
+- Reduced-motion accessibility is supported.
+- No additional headers were introduced; all 10 pages retain one header and one footer.
+- Homepage voltage statistic corrected to current 22kV data-centre SAP environment.

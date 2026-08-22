@@ -434,3 +434,66 @@ h2{font-size:clamp(32px,4vw,52px);margin:0 0 18px}
   .process{grid-template-columns:1fr}
   .step{min-height:0}
 }
+
+
+/* ===== POWERTEC HERO BRAND WATERMARK ===== */
+.hero-v4 .hero-brand-watermark{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+  overflow:hidden;
+}
+.hero-v4 .hero-brand-watermark img{
+  width:min(84vw,1180px);
+  max-width:none;
+  height:auto;
+  opacity:0;
+  filter:grayscale(1) brightness(2.7) contrast(.65);
+  transform:scale(.92);
+  animation:powertecBrandFade 10s ease-in-out infinite;
+}
+@keyframes powertecBrandFade{
+  0%,100%{opacity:0;transform:scale(.92)}
+  18%{opacity:.045;transform:scale(.97)}
+  45%{opacity:.115;transform:scale(1.015)}
+  62%{opacity:.115;transform:scale(1.015)}
+  86%{opacity:.04;transform:scale(.97)}
+}
+
+/* Hero photograph overlay remains behind branding and copy */
+.hero-v4:before{z-index:0}
+.hero-v4 .hero-v4-inner{z-index:2}
+
+/* Mobile treatment — larger, slower and deliberately subtle */
+@media(max-width:760px){
+  .hero-v4 .hero-brand-watermark{
+    align-items:center;
+    justify-content:center;
+  }
+  .hero-v4 .hero-brand-watermark img{
+    width:155vw;
+    max-width:none;
+    opacity:0;
+    transform:scale(.9);
+    animation:powertecBrandFadeMobile 9s ease-in-out infinite;
+  }
+  @keyframes powertecBrandFadeMobile{
+    0%,100%{opacity:0;transform:scale(.90)}
+    22%{opacity:.035;transform:scale(.96)}
+    48%{opacity:.085;transform:scale(1.02)}
+    64%{opacity:.085;transform:scale(1.02)}
+    86%{opacity:.03;transform:scale(.96)}
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-v4 .hero-brand-watermark img{
+    animation:none!important;
+    opacity:.07;
+    transform:none;
+  }
+}
