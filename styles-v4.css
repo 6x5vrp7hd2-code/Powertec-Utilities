@@ -633,96 +633,116 @@ h2{font-size:clamp(32px,4vw,52px);margin:0 0 18px}
   }
 }
 
+/* ==========================================================
+   V12 — HOME BRAND RESTORED / MENU TAB / GRAPHIC BACKGROUNDS
+   ========================================================== */
 
-/* ==================================================================
-   V11 — REQUESTED VISUAL CORRECTIONS
-   ================================================================== */
-
-/* HOME: no conventional header bar, but retain a clear floating menu tab */
+/* HOME: no header bar */
 .homepage .site-header{display:none!important}
-.home-floating-nav{
+
+/* Floating menu tab stays top-left */
+.home-menu-shell{
   position:fixed;
-  top:22px;
-  left:22px;
-  z-index:300;
+  top:18px;
+  left:18px;
+  z-index:500;
 }
-.home-menu-toggle{
+.home-menu-button{
   display:flex!important;
-  align-items:center;
-  justify-content:center;
+  align-items:center!important;
+  justify-content:center!important;
   width:54px!important;
   height:54px!important;
-  border:1px solid rgba(255,255,255,.38)!important;
-  background:rgba(8,12,16,.82)!important;
+  border:1px solid rgba(255,255,255,.40)!important;
+  background:rgba(8,12,16,.88)!important;
   color:#f58220!important;
-  font-size:25px!important;
-  box-shadow:0 10px 28px rgba(0,0,0,.28);
-  backdrop-filter:blur(8px);
+  font-size:26px!important;
+  box-shadow:0 10px 30px rgba(0,0,0,.32)!important;
 }
-.home-navlinks{
+.home-menu-panel{
   display:none!important;
   position:absolute!important;
   top:62px!important;
   left:0!important;
   width:250px!important;
   padding:12px!important;
-  background:rgba(12,15,18,.97)!important;
-  box-shadow:0 18px 40px rgba(0,0,0,.35)!important;
   flex-direction:column!important;
   gap:0!important;
-  border:1px solid rgba(245,130,32,.24);
+  background:rgba(12,15,18,.98)!important;
+  border:1px solid rgba(245,130,32,.30)!important;
+  box-shadow:0 18px 40px rgba(0,0,0,.40)!important;
 }
-.home-navlinks.open{display:flex!important}
-.home-navlinks a{
+.home-menu-panel.open{display:flex!important}
+.home-menu-panel a{
   color:#fff!important;
   padding:13px 14px!important;
   border-bottom:1px solid rgba(255,255,255,.10)!important;
 }
-.home-navlinks a.active{color:#f58220!important}
-.home-navlinks .enquire{
+.home-menu-panel a.active{color:#f58220!important}
+.home-menu-panel .enquire{
   margin-top:8px!important;
   background:#f58220!important;
   text-align:center!important;
-  border-bottom:0!important;
+  border:0!important;
 }
 
-/* HOME BRAND MOMENT: large, bright, unmistakable logo */
+/* Hero brand: persistent logo + separate animated emblem */
 .hero-v4{
   position:relative!important;
   min-height:100vh!important;
   overflow:hidden!important;
+  padding-top:0!important;
 }
+.hero-logo-lockup{
+  position:absolute!important;
+  z-index:7!important;
+  top:28px!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  width:min(390px,44vw)!important;
+  display:block!important;
+  opacity:1!important;
+}
+.hero-logo-lockup img{
+  width:100%!important;
+  height:auto!important;
+  display:block!important;
+  opacity:1!important;
+  filter:drop-shadow(0 6px 20px rgba(0,0,0,.34))!important;
+}
+
+/* Giant emblem fades in and out behind content */
 .hero-v4 .hero-brand-watermark{
   position:absolute!important;
   inset:0!important;
   z-index:2!important;
   display:flex!important;
   align-items:center!important;
-  justify-content:center!important;
+  justify-content:flex-end!important;
+  padding-right:2vw!important;
   pointer-events:none!important;
 }
 .hero-v4 .hero-brand-watermark img{
   display:block!important;
-  width:min(1120px,88vw)!important;
+  width:min(900px,68vw)!important;
   max-width:none!important;
   height:auto!important;
-  filter:drop-shadow(0 0 28px rgba(245,130,32,.24))!important;
-  mix-blend-mode:normal!important;
   opacity:0!important;
+  filter:drop-shadow(0 0 36px rgba(245,130,32,.36))!important;
+  mix-blend-mode:screen!important;
   transform:scale(.92)!important;
-  animation:powertecHeroBrandV11 8.5s ease-in-out infinite!important;
+  animation:powertecEmblemV12 8s ease-in-out infinite!important;
 }
-@keyframes powertecHeroBrandV11{
+@keyframes powertecEmblemV12{
   0%,100%{opacity:0;transform:scale(.92)}
-  14%{opacity:.22;transform:scale(.96)}
-  35%{opacity:.52;transform:scale(1)}
-  52%{opacity:.66;transform:scale(1.025)}
-  66%{opacity:.66;transform:scale(1.025)}
-  84%{opacity:.22;transform:scale(.98)}
+  15%{opacity:.24;transform:scale(.96)}
+  36%{opacity:.50;transform:scale(1)}
+  52%,66%{opacity:.66;transform:scale(1.035)}
+  84%{opacity:.24;transform:scale(.98)}
 }
 .hero-v4:before{
   z-index:0!important;
-  background:linear-gradient(90deg,rgba(0,0,0,.87) 0%,rgba(0,0,0,.65) 45%,rgba(0,0,0,.34) 100%)!important;
+  background:linear-gradient(90deg,rgba(0,0,0,.86) 0%,rgba(0,0,0,.62) 48%,rgba(0,0,0,.30) 100%)!important;
 }
 .hero-v4:after{
   content:"";
@@ -731,153 +751,154 @@ h2{font-size:clamp(32px,4vw,52px);margin:0 0 18px}
   z-index:1;
   pointer-events:none;
   background:
-    radial-gradient(circle at 52% 50%,rgba(255,255,255,.11),transparent 31%),
-    radial-gradient(circle at 65% 48%,rgba(245,130,32,.13),transparent 27%);
+    radial-gradient(circle at 72% 48%,rgba(245,130,32,.15),transparent 29%),
+    radial-gradient(circle at 84% 58%,rgba(0,135,207,.08),transparent 25%);
 }
 .hero-v4 .hero-v4-inner{
   position:relative!important;
-  z-index:4!important;
+  z-index:5!important;
   min-height:100vh!important;
+  padding-top:150px!important;
 }
 
-/* INTERNAL FOOTERS: explicitly preserve and emphasise the footer logo */
+/* Footer logo must always remain visible */
 .site-footer .footer-brand img{
   display:block!important;
-  width:190px!important;
-  height:auto!important;
-  opacity:1!important;
   visibility:visible!important;
-  background:#101010!important;
-  object-fit:contain!important;
+  opacity:1!important;
+  width:190px!important;
+  max-width:100%!important;
+  height:auto!important;
 }
 
-/* VISIBLE BACKGROUND GRAPHICS — no more uninterrupted white slabs */
+/* Strong, intentionally visible graphic backgrounds */
 .section:not(.section-dark),
 .authenticity,
 .content-block,
 .service-detail{
-  position:relative;
-  overflow:hidden;
+  position:relative!important;
+  overflow:hidden!important;
 }
 .section:not(.section-dark)::before,
 .authenticity::before,
 .content-block::before,
 .service-detail::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:0;
-  pointer-events:none;
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:0!important;
+  pointer-events:none!important;
   background:
-    linear-gradient(120deg,transparent 0 67%,rgba(245,130,32,.055) 67% 68%,transparent 68% 100%),
-    linear-gradient(60deg,transparent 0 78%,rgba(25,130,185,.045) 78% 79%,transparent 79% 100%),
-    radial-gradient(circle at 92% 12%,rgba(245,130,32,.11),transparent 18%),
-    radial-gradient(circle at 8% 88%,rgba(25,130,185,.07),transparent 20%);
+    radial-gradient(circle at 94% 10%,rgba(245,130,32,.13),transparent 19%),
+    radial-gradient(circle at 5% 88%,rgba(0,135,207,.09),transparent 21%),
+    linear-gradient(120deg,transparent 0 65%,rgba(245,130,32,.055) 65% 66.2%,transparent 66.2%),
+    linear-gradient(58deg,transparent 0 77%,rgba(0,135,207,.045) 77% 78.2%,transparent 78.2%)!important;
 }
 .section:not(.section-dark)::after,
 .authenticity::after{
-  content:"";
-  position:absolute;
-  z-index:0;
-  width:430px;
-  height:430px;
-  right:-205px;
-  bottom:-215px;
-  background:url('brand-emblem.png') center/contain no-repeat;
-  opacity:.075;
-  transform:rotate(-10deg);
-  pointer-events:none;
+  content:""!important;
+  position:absolute!important;
+  z-index:0!important;
+  right:-145px!important;
+  bottom:-165px!important;
+  width:430px!important;
+  height:430px!important;
+  background:url('brand-emblem.png') center/contain no-repeat!important;
+  opacity:.10!important;
+  transform:rotate(-12deg)!important;
+  pointer-events:none!important;
 }
 .section:not(.section-dark) > .wrap,
 .authenticity > .wrap,
 .content-block > .wrap,
 .service-detail > *{
-  position:relative;
-  z-index:1;
+  position:relative!important;
+  z-index:1!important;
 }
 
-/* Alternate light sections get a subtle engineering-grid treatment */
+/* Light-grey areas get engineering grid rather than flat fill */
 .section-soft{
-  position:relative;
-  overflow:hidden;
-  background-color:#f4f5f6!important;
+  background-color:#f3f4f5!important;
   background-image:
-    linear-gradient(rgba(31,42,49,.035) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(31,42,49,.035) 1px,transparent 1px),
-    radial-gradient(circle at 90% 20%,rgba(245,130,32,.10),transparent 19%)!important;
-  background-size:52px 52px,52px 52px,auto!important;
+    linear-gradient(rgba(31,42,49,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(31,42,49,.045) 1px,transparent 1px),
+    radial-gradient(circle at 88% 18%,rgba(245,130,32,.12),transparent 21%)!important;
+  background-size:48px 48px,48px 48px,auto!important;
 }
 
-/* Stronger brand graphic panels for pages that previously felt empty */
-.brand-graphic-panel{
-  position:relative;
-  min-height:300px;
-  display:flex;
-  align-items:center;
-  padding:48px;
-  margin:44px 0;
-  overflow:hidden;
-  background:linear-gradient(125deg,#111 0%,#202326 64%,#2d190d 100%);
-  color:#fff;
+/* Cards carry a faint Powertec arc motif */
+.card{
+  background-color:rgba(255,255,255,.96)!important;
+  position:relative!important;
+  overflow:hidden!important;
 }
-.brand-graphic-panel img{
-  position:absolute;
-  width:410px;
-  right:-65px;
-  top:-80px;
-  opacity:.32;
-  filter:drop-shadow(0 0 24px rgba(245,130,32,.24));
+.card:before{
+  content:""!important;
+  position:absolute!important;
+  right:-52px!important;
+  top:-58px!important;
+  width:150px!important;
+  height:150px!important;
+  border:3px solid rgba(245,130,32,.16)!important;
+  border-radius:50%!important;
 }
-.brand-graphic-panel > div{position:relative;z-index:1;max-width:620px}
-.brand-graphic-panel h3{color:#fff;font-size:30px}
+.card:after{
+  content:""!important;
+  position:absolute!important;
+  right:-12px!important;
+  top:-18px!important;
+  width:72px!important;
+  height:72px!important;
+  border:2px solid rgba(0,135,207,.10)!important;
+  border-radius:50%!important;
+}
+.card > *{position:relative!important;z-index:1!important}
 
-/* Internal hero graphics fade with recognisable brand colour */
+/* Internal page hero graphics */
 .page-hero .page-brand-watermark img{
-  filter:drop-shadow(0 0 16px rgba(245,130,32,.16))!important;
-  mix-blend-mode:normal!important;
-  animation:internalBrandV11 9.5s ease-in-out infinite!important;
+  filter:drop-shadow(0 0 24px rgba(245,130,32,.22))!important;
+  mix-blend-mode:screen!important;
+  animation:internalLogoV12 9s ease-in-out infinite!important;
 }
-@keyframes internalBrandV11{
+@keyframes internalLogoV12{
   0%,100%{opacity:0}
-  20%{opacity:.10}
-  45%,66%{opacity:.26}
+  20%{opacity:.12}
+  45%,65%{opacity:.28}
   88%{opacity:.08}
 }
 
 @media(max-width:760px){
-  .home-floating-nav{top:16px;left:16px}
-  .home-menu-toggle{width:50px!important;height:50px!important}
-  .home-navlinks{top:58px!important;width:230px!important}
-
-  .hero-v4 .hero-brand-watermark img{
-    width:142vw!important;
-    max-width:none!important;
-    animation:powertecHeroBrandMobileV11 8s ease-in-out infinite!important;
+  .home-menu-shell{top:14px;left:14px}
+  .home-menu-button{width:50px!important;height:50px!important}
+  .home-menu-panel{top:58px!important;width:230px!important}
+  .hero-logo-lockup{
+    top:22px!important;
+    width:min(270px,68vw)!important;
   }
-  @keyframes powertecHeroBrandMobileV11{
+  .hero-v4 .hero-v4-inner{
+    padding-top:130px!important;
+  }
+  .hero-v4 .hero-brand-watermark{
+    justify-content:center!important;
+    padding-right:0!important;
+  }
+  .hero-v4 .hero-brand-watermark img{
+    width:135vw!important;
+    animation:powertecEmblemMobileV12 7.5s ease-in-out infinite!important;
+  }
+  @keyframes powertecEmblemMobileV12{
     0%,100%{opacity:0;transform:scale(.92)}
-    16%{opacity:.18;transform:scale(.96)}
-    38%{opacity:.44;transform:scale(1)}
-    54%,68%{opacity:.58;transform:scale(1.025)}
-    85%{opacity:.18;transform:scale(.98)}
+    18%{opacity:.20;transform:scale(.96)}
+    40%{opacity:.44;transform:scale(1)}
+    55%,68%{opacity:.58;transform:scale(1.03)}
+    84%{opacity:.20;transform:scale(.98)}
   }
   .section:not(.section-dark)::after,
   .authenticity::after{
-    width:280px;
-    height:280px;
-    right:-145px;
-    bottom:-140px;
-    opacity:.065;
-  }
-  .brand-graphic-panel{padding:32px 24px;min-height:260px}
-  .brand-graphic-panel img{width:290px;right:-100px;top:-55px}
-  .brand-graphic-panel h3{font-size:24px}
-}
-
-@media(prefers-reduced-motion:reduce){
-  .hero-v4 .hero-brand-watermark img,
-  .page-hero .page-brand-watermark img{
-    animation:none!important;
-    opacity:.32!important;
+    width:280px!important;
+    height:280px!important;
+    right:-140px!important;
+    bottom:-140px!important;
+    opacity:.085!important;
   }
 }
