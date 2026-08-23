@@ -2162,3 +2162,161 @@ body:not(.homepage) .site-header .logo{display:none!important}
     width:58px!important;
   }
 }
+
+/* =====================================================================
+   V21 — FINAL BUILD
+   ===================================================================== */
+
+/* HOMEPAGE FULL BRAND: clean fade in and out */
+.homepage .hero-v4{
+  position:relative!important;
+  min-height:100svh!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+}
+
+.homepage .hero-v4::before{z-index:0!important;}
+.homepage .hero-v4::after{z-index:1!important;}
+
+.hero-brand-lockup{
+  position:absolute!important;
+  z-index:3!important;
+  top:4.5%!important;
+  left:50%!important;
+  width:min(700px,82vw)!important;
+  transform:translateX(-50%)!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  pointer-events:none!important;
+  opacity:0!important;
+  animation:powertecBrandFadeV21 8.8s ease-in-out infinite!important;
+  will-change:opacity!important;
+}
+
+.hero-brand-emblem{
+  display:block!important;
+  width:58%!important;
+  height:auto!important;
+  max-width:none!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:transparent!important;
+  filter:drop-shadow(0 0 10px rgba(245,130,32,.18))!important;
+}
+
+.hero-wordmark{
+  margin-top:-2%!important;
+  width:100%!important;
+  text-align:center!important;
+  line-height:.86!important;
+}
+
+.hero-wordmark strong{
+  display:block!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:clamp(62px,9.5vw,132px)!important;
+  font-weight:800!important;
+  letter-spacing:-.05em!important;
+  text-transform:lowercase!important;
+  background:linear-gradient(90deg,#a63d1d 0%,#e35c18 46%,#ff9708 100%)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  color:transparent!important;
+}
+
+.hero-wordmark span{
+  display:block!important;
+  margin-top:.14em!important;
+  padding-left:27%!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:clamp(29px,4.4vw,60px)!important;
+  font-weight:650!important;
+  letter-spacing:.01em!important;
+  color:#bfc3c7!important;
+}
+
+@keyframes powertecBrandFadeV21{
+  0%   {opacity:0}
+  12%  {opacity:.08}
+  28%  {opacity:.38}
+  42%  {opacity:.78}
+  50%  {opacity:1}
+  64%  {opacity:1}
+  78%  {opacity:.48}
+  90%  {opacity:.14}
+  100% {opacity:0}
+}
+
+/* Keep logo clear of the hero copy */
+.homepage .hero-v4 .hero-v4-inner{
+  position:relative!important;
+  z-index:4!important;
+  min-height:100svh!important;
+  padding-top:max(49vh,430px)!important;
+}
+
+/* INTERNAL HEADER EMBLEMS: sharp, transparent */
+.header-emblem{
+  display:block!important;
+  width:62px!important;
+  height:auto!important;
+  max-width:none!important;
+  object-fit:contain!important;
+  background:transparent!important;
+  filter:none!important;
+}
+
+/* FOOTER BRAND: transparent on page background */
+.site-footer,
+.footer-brand,
+.footer-brand-lockup,
+.footer-wordmark{
+  background:transparent!important;
+}
+.footer-brand-lockup{
+  display:flex!important;
+  align-items:center!important;
+  gap:12px!important;
+  padding:0!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+.footer-brand-lockup img{
+  display:block!important;
+  width:60px!important;
+  height:auto!important;
+  background:transparent!important;
+  filter:none!important;
+}
+.footer-wordmark strong{color:#f36f1b!important;}
+.footer-wordmark span{color:#c8cdd1!important;}
+
+@media(max-width:760px){
+  .hero-brand-lockup{
+    top:4%!important;
+    width:90vw!important;
+  }
+
+  .hero-brand-emblem{
+    width:60%!important;
+  }
+
+  .hero-wordmark strong{
+    font-size:clamp(58px,16vw,88px)!important;
+  }
+
+  .hero-wordmark span{
+    font-size:clamp(26px,7.5vw,40px)!important;
+    padding-left:27%!important;
+  }
+
+  .homepage .hero-v4 .hero-v4-inner{
+    padding-top:max(48vh,405px)!important;
+  }
+
+  .header-emblem{
+    width:58px!important;
+  }
+}
