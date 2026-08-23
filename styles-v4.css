@@ -902,3 +902,121 @@ h2{font-size:clamp(32px,4vw,52px);margin:0 0 18px}
     opacity:.085!important;
   }
 }
+
+/* ==========================================================
+   V13 — HOMEPAGE EMBLEM ONLY
+   ========================================================== */
+
+/* Remove any legacy static full-logo lockup if cached CSS/markup survives */
+.homepage .hero-logo-lockup{display:none!important}
+
+/* Large Powertec emblem only — no wordmark */
+.hero-v4 .hero-brand-watermark{
+  position:absolute!important;
+  inset:0!important;
+  z-index:3!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:0!important;
+  pointer-events:none!important;
+  overflow:hidden!important;
+}
+
+.hero-v4 .hero-brand-watermark img{
+  display:block!important;
+  width:min(820px,62vw)!important;
+  max-width:none!important;
+  height:auto!important;
+  opacity:0!important;
+  filter:
+    saturate(1.18)
+    contrast(1.06)
+    drop-shadow(0 0 28px rgba(245,130,32,.34))!important;
+  mix-blend-mode:normal!important;
+  transform:scale(.90)!important;
+  animation:powertecEmblemOnlyV13 8s ease-in-out infinite!important;
+}
+
+@keyframes powertecEmblemOnlyV13{
+  0%,100%{
+    opacity:0;
+    transform:scale(.90);
+  }
+  14%{
+    opacity:.18;
+    transform:scale(.95);
+  }
+  34%{
+    opacity:.52;
+    transform:scale(1);
+  }
+  50%,66%{
+    opacity:.86;
+    transform:scale(1.035);
+  }
+  84%{
+    opacity:.24;
+    transform:scale(.98);
+  }
+}
+
+/* Keep hero text legible but allow the emblem to remain visually strong */
+.hero-v4:after{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:2!important;
+  pointer-events:none!important;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.83) 0%,rgba(0,0,0,.56) 44%,rgba(0,0,0,.25) 100%),
+    radial-gradient(circle at 50% 48%,rgba(245,130,32,.08),transparent 34%)!important;
+}
+
+/* With the full wordmark removed, restore hero content spacing */
+.hero-v4 .hero-v4-inner{
+  padding-top:78px!important;
+}
+
+@media(max-width:760px){
+  .hero-v4 .hero-brand-watermark img{
+    width:120vw!important;
+    max-width:none!important;
+    animation:powertecEmblemOnlyMobileV13 7.5s ease-in-out infinite!important;
+  }
+
+  @keyframes powertecEmblemOnlyMobileV13{
+    0%,100%{
+      opacity:0;
+      transform:scale(.90);
+    }
+    16%{
+      opacity:.16;
+      transform:scale(.95);
+    }
+    38%{
+      opacity:.48;
+      transform:scale(1);
+    }
+    52%,68%{
+      opacity:.82;
+      transform:scale(1.035);
+    }
+    86%{
+      opacity:.22;
+      transform:scale(.98);
+    }
+  }
+
+  .hero-v4 .hero-v4-inner{
+    padding-top:72px!important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-v4 .hero-brand-watermark img{
+    animation:none!important;
+    opacity:.72!important;
+    transform:scale(1)!important;
+  }
+}
