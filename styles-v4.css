@@ -1020,3 +1020,116 @@ h2{font-size:clamp(32px,4vw,52px);margin:0 0 18px}
     transform:scale(1)!important;
   }
 }
+
+/* ==========================================================
+   V14 — HOMEPAGE POWERTEC EMBLEM: DEFINITIVELY VISIBLE
+   The emblem sits ABOVE the dark photo overlay and BELOW text.
+   ========================================================== */
+
+.hero-v4{
+  position:relative!important;
+  isolation:isolate!important;
+}
+
+/* background/photo overlay stays at the back */
+.hero-v4::before,
+.hero-v4:before{
+  z-index:0!important;
+}
+
+/* dark readability overlay */
+.hero-v4::after,
+.hero-v4:after{
+  z-index:1!important;
+}
+
+/* THE POWERTEC EMBLEM */
+.hero-v4 .hero-brand-watermark{
+  position:absolute!important;
+  top:7%!important;
+  left:50%!important;
+  width:min(760px,78vw)!important;
+  height:min(760px,78vw)!important;
+  transform:translateX(-50%)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  z-index:2!important;
+  opacity:1!important;
+  visibility:visible!important;
+  pointer-events:none!important;
+  overflow:visible!important;
+}
+
+.hero-v4 .hero-brand-watermark img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  max-width:none!important;
+  opacity:.92!important;
+  visibility:visible!important;
+  mix-blend-mode:screen!important;
+  filter:
+    saturate(1.45)
+    brightness(1.32)
+    contrast(1.08)
+    drop-shadow(0 0 18px rgba(239,126,31,.58))
+    drop-shadow(0 0 48px rgba(239,126,31,.25))!important;
+  transform:scale(.94)!important;
+  animation:powertecLogoV14 7s ease-in-out infinite!important;
+}
+
+/* Content remains on top of emblem */
+.hero-v4 .hero-v4-inner,
+.hero-v4 .hero-content,
+.hero-v4 > .container{
+  position:relative!important;
+  z-index:3!important;
+}
+
+@keyframes powertecLogoV14{
+  0%,100%{
+    opacity:.28;
+    transform:scale(.92);
+    filter:saturate(1.35) brightness(1.12) contrast(1.05)
+      drop-shadow(0 0 12px rgba(239,126,31,.35));
+  }
+  20%{
+    opacity:.58;
+    transform:scale(.97);
+  }
+  42%,68%{
+    opacity:1;
+    transform:scale(1.035);
+    filter:saturate(1.55) brightness(1.55) contrast(1.1)
+      drop-shadow(0 0 22px rgba(239,126,31,.72))
+      drop-shadow(0 0 60px rgba(239,126,31,.34));
+  }
+  86%{
+    opacity:.52;
+    transform:scale(.97);
+  }
+}
+
+@media(max-width:760px){
+  .hero-v4 .hero-brand-watermark{
+    top:8%!important;
+    left:50%!important;
+    width:112vw!important;
+    height:112vw!important;
+  }
+
+  .hero-v4 .hero-brand-watermark img{
+    opacity:.96!important;
+  }
+}
+
+/* Even reduced-motion users should clearly see the emblem */
+@media(prefers-reduced-motion:reduce){
+  .hero-v4 .hero-brand-watermark img{
+    animation:none!important;
+    opacity:.95!important;
+    transform:scale(1)!important;
+  }
+}
