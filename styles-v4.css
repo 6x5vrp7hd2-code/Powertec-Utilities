@@ -2320,3 +2320,374 @@ body:not(.homepage) .site-header .logo{display:none!important}
     width:58px!important;
   }
 }
+
+/* =====================================================================
+   V22 — MATCHES APPROVED ILLUSTRATION
+   ===================================================================== */
+
+:root{
+  --powertec-bg:#0b1116;
+  --powertec-panel:#111920;
+  --powertec-panel-2:#151e25;
+  --powertec-orange:#f47a12;
+  --powertec-grey:#c3c7ca;
+}
+
+/* ---------------- HOMEPAGE ---------------- */
+.homepage{
+  background:var(--powertec-bg)!important;
+}
+
+.homepage .hero-v4{
+  position:relative!important;
+  min-height:100svh!important;
+  background-position:center!important;
+  background-size:cover!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+}
+
+.homepage .hero-v4::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:0!important;
+  background:
+    linear-gradient(90deg,rgba(1,5,8,.94) 0%,rgba(1,5,8,.80) 35%,rgba(1,5,8,.40) 68%,rgba(1,5,8,.20) 100%)!important;
+}
+
+.homepage .hero-v4::after{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:1!important;
+  background:
+    radial-gradient(circle at 17% 15%,rgba(244,122,18,.06),transparent 20%),
+    linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.18))!important;
+  pointer-events:none!important;
+}
+
+/* Full brand lockup: illustration position and fade */
+.hero-brand-lockup{
+  position:absolute!important;
+  z-index:3!important;
+  top:5.8%!important;
+  left:4.2%!important;
+  width:min(480px,42vw)!important;
+  transform:none!important;
+  display:grid!important;
+  grid-template-columns:116px 1fr!important;
+  column-gap:16px!important;
+  align-items:center!important;
+  pointer-events:none!important;
+  opacity:0!important;
+  animation:powertecLogoFadeV22 8.4s ease-in-out infinite!important;
+  will-change:opacity!important;
+}
+
+.hero-brand-emblem{
+  display:block!important;
+  width:116px!important;
+  height:auto!important;
+  max-width:none!important;
+  object-fit:contain!important;
+  background:transparent!important;
+  filter:none!important;
+}
+
+.hero-wordmark{
+  width:auto!important;
+  margin:0!important;
+  text-align:left!important;
+  line-height:.85!important;
+}
+
+.hero-wordmark strong{
+  display:block!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:64px!important;
+  font-weight:800!important;
+  letter-spacing:-.05em!important;
+  text-transform:lowercase!important;
+  background:linear-gradient(90deg,#a53b1e 0%,#e55b17 52%,#ff9708 100%)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  color:transparent!important;
+  white-space:nowrap!important;
+}
+
+.hero-wordmark span{
+  display:block!important;
+  margin-top:7px!important;
+  padding:0!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:29px!important;
+  font-weight:650!important;
+  letter-spacing:.02em!important;
+  color:#bfc4c8!important;
+  white-space:nowrap!important;
+}
+
+@keyframes powertecLogoFadeV22{
+  0%{opacity:0}
+  12%{opacity:.08}
+  28%{opacity:.42}
+  42%{opacity:.82}
+  52%,68%{opacity:1}
+  82%{opacity:.44}
+  94%{opacity:.08}
+  100%{opacity:0}
+}
+
+/* Homepage copy deliberately starts below the logo */
+.homepage .hero-v4 .hero-v4-inner{
+  position:relative!important;
+  z-index:4!important;
+  min-height:100svh!important;
+  display:flex!important;
+  align-items:flex-start!important;
+  padding-top:31vh!important;
+  padding-bottom:70px!important;
+}
+
+.homepage .hero-v4-copy{
+  width:min(510px,44vw)!important;
+  margin-left:0!important;
+}
+
+.homepage .hero-v4-copy h1{
+  font-size:clamp(42px,4.2vw,64px)!important;
+  line-height:1.06!important;
+  letter-spacing:-.025em!important;
+}
+
+.homepage .hero-kicker{
+  font-size:18px!important;
+  line-height:1.35!important;
+  font-weight:700!important;
+  max-width:430px!important;
+}
+
+.homepage .hero-v4-copy p{
+  max-width:450px!important;
+  font-size:15px!important;
+  line-height:1.55!important;
+}
+
+.homepage .hero-v4-copy .secondary{
+  display:none!important;
+}
+
+/* Illustration has menu box top-right */
+.home-menu-shell{
+  position:fixed!important;
+  top:25px!important;
+  right:26px!important;
+  left:auto!important;
+  z-index:800!important;
+}
+
+.home-menu-button{
+  width:56px!important;
+  height:56px!important;
+  background:rgba(7,12,16,.82)!important;
+  color:var(--powertec-orange)!important;
+  border:1px solid rgba(255,255,255,.50)!important;
+}
+
+.home-menu-panel{
+  right:0!important;
+  left:auto!important;
+}
+
+/* ---------------- INTERNAL PAGE HEADER ---------------- */
+body:not(.homepage){
+  background:var(--powertec-bg)!important;
+  color:#d7dce0!important;
+}
+
+body:not(.homepage) .internal-header{
+  position:relative!important;
+  min-height:138px!important;
+  background-image:
+    linear-gradient(90deg,rgba(7,12,16,.60),rgba(7,12,16,.34)),
+    var(--header-image)!important;
+  background-size:cover!important;
+  background-position:center 45%!important;
+  border-bottom:1px solid rgba(255,255,255,.16)!important;
+}
+
+body:not(.homepage) .internal-header .nav{
+  min-height:138px!important;
+  background:transparent!important;
+}
+
+.header-emblem-link{
+  background:transparent!important;
+  border:0!important;
+  padding:0!important;
+}
+
+.header-emblem{
+  display:block!important;
+  width:66px!important;
+  height:auto!important;
+  object-fit:contain!important;
+  background:transparent!important;
+  filter:none!important;
+}
+
+body:not(.homepage) .internal-header .menu-toggle{
+  width:52px!important;
+  height:52px!important;
+  background:rgba(8,13,18,.76)!important;
+  color:var(--powertec-orange)!important;
+  border:1px solid rgba(255,255,255,.50)!important;
+}
+
+/* Remove second photographic hero. Keep title section on same dark page. */
+body:not(.homepage) .page-hero-clean,
+body:not(.homepage) .page-hero{
+  min-height:0!important;
+  background:var(--powertec-bg)!important;
+  background-image:none!important;
+  padding:44px 0 34px!important;
+  border:0!important;
+}
+
+body:not(.homepage) .page-hero::before,
+body:not(.homepage) .page-hero::after{
+  display:none!important;
+}
+
+body:not(.homepage) .page-hero h1{
+  font-size:clamp(38px,5.4vw,64px)!important;
+  line-height:1.02!important;
+}
+
+/* dark, illustration-like sections */
+body:not(.homepage) main,
+body:not(.homepage) .section,
+body:not(.homepage) .section-soft,
+body:not(.homepage) .section-dark,
+body:not(.homepage) .authenticity,
+body:not(.homepage) .content-block,
+body:not(.homepage) .service-detail{
+  background:var(--powertec-bg)!important;
+  color:#d7dce0!important;
+}
+
+body:not(.homepage) .card,
+body:not(.homepage) .sector-card,
+body:not(.homepage) .service-proof,
+body:not(.homepage) .step{
+  background:rgba(18,27,34,.84)!important;
+  border:1px solid rgba(255,255,255,.13)!important;
+  box-shadow:none!important;
+}
+
+body:not(.homepage) h1,
+body:not(.homepage) h2,
+body:not(.homepage) h3{
+  color:#f2f4f5!important;
+}
+
+body:not(.homepage) p,
+body:not(.homepage) li{
+  color:#c4cbd0!important;
+}
+
+body:not(.homepage) .eyebrow,
+body:not(.homepage) .text-link{
+  color:var(--powertec-orange)!important;
+}
+
+/* ---------------- FOOTER ---------------- */
+/* No black logo box. The logo and wordmark sit directly on page background. */
+.site-footer{
+  background:var(--powertec-bg)!important;
+  border-top:1px solid rgba(255,255,255,.13)!important;
+}
+
+.footer-brand,
+.footer-brand-lockup,
+.footer-wordmark,
+.footer-brand-lockup img{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+
+.footer-brand-lockup{
+  display:flex!important;
+  align-items:center!important;
+  gap:12px!important;
+}
+
+.footer-brand-lockup img{
+  width:58px!important;
+  height:auto!important;
+  object-fit:contain!important;
+  filter:none!important;
+}
+
+.footer-wordmark strong{
+  color:#f36b19!important;
+}
+
+.footer-wordmark span{
+  color:#bfc5c9!important;
+}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:760px){
+  .hero-brand-lockup{
+    top:4.8%!important;
+    left:24px!important;
+    width:calc(100vw - 96px)!important;
+    max-width:330px!important;
+    grid-template-columns:78px 1fr!important;
+    column-gap:11px!important;
+  }
+
+  .hero-brand-emblem{
+    width:78px!important;
+  }
+
+  .hero-wordmark strong{
+    font-size:42px!important;
+  }
+
+  .hero-wordmark span{
+    font-size:20px!important;
+    margin-top:5px!important;
+  }
+
+  .homepage .hero-v4 .hero-v4-inner{
+    padding-top:29vh!important;
+    padding-left:24px!important;
+    padding-right:24px!important;
+  }
+
+  .homepage .hero-v4-copy{
+    width:100%!important;
+  }
+
+  .homepage .hero-v4-copy h1{
+    font-size:clamp(42px,11.5vw,58px)!important;
+  }
+
+  .home-menu-shell{
+    top:18px!important;
+    right:18px!important;
+  }
+
+  body:not(.homepage) .internal-header,
+  body:not(.homepage) .internal-header .nav{
+    min-height:112px!important;
+  }
+
+  .header-emblem{
+    width:58px!important;
+  }
+}
