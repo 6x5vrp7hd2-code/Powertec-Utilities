@@ -1928,3 +1928,237 @@ body:not(.homepage) .site-header .logo{
     opacity:.70!important;
   }
 }
+
+/* =====================================================================
+   V20 — APPROVED DARK CORPORATE STYLE
+   ===================================================================== */
+
+/* HOMEPAGE: whole brand lockup fades in and out */
+.homepage .hero-v4{
+  position:relative!important;
+  min-height:100svh!important;
+  overflow:hidden!important;
+}
+.homepage .hero-v4 .hero-v4-inner{
+  position:relative!important;
+  z-index:4!important;
+  min-height:100svh!important;
+  padding-top:47vh!important;
+}
+
+.hero-brand-lockup{
+  position:absolute!important;
+  z-index:3!important;
+  top:4.5%!important;
+  left:50%!important;
+  width:min(720px,84vw)!important;
+  transform:translateX(-50%)!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  pointer-events:none!important;
+  opacity:0;
+  animation:powertecBrandFadeV20 8.6s ease-in-out infinite!important;
+}
+.hero-brand-emblem{
+  display:block!important;
+  width:62%!important;
+  height:auto!important;
+  object-fit:contain!important;
+  filter:none!important;
+}
+.hero-wordmark{
+  margin-top:-4%!important;
+  width:100%!important;
+  text-align:center!important;
+  line-height:.84!important;
+}
+.hero-wordmark strong{
+  display:block!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:clamp(64px,10vw,138px)!important;
+  font-weight:800!important;
+  letter-spacing:-.055em!important;
+  text-transform:lowercase!important;
+  background:linear-gradient(90deg,#a83f1e 0%,#e85e18 47%,#ff9b08 100%)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  color:transparent!important;
+}
+.hero-wordmark span{
+  display:block!important;
+  margin-top:.16em!important;
+  padding-left:27%!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:clamp(31px,4.6vw,64px)!important;
+  font-weight:650!important;
+  letter-spacing:.005em!important;
+  color:#b7bbc0!important;
+}
+@keyframes powertecBrandFadeV20{
+  0%{opacity:0}
+  14%{opacity:.18}
+  32%{opacity:.68}
+  44%,64%{opacity:1}
+  82%{opacity:.28}
+  100%{opacity:0}
+}
+.homepage .hero-v4::before{
+  z-index:0!important;
+  background:linear-gradient(90deg,rgba(0,0,0,.90) 0%,rgba(0,0,0,.66) 48%,rgba(0,0,0,.28) 100%)!important;
+}
+.homepage .hero-v4::after{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:1!important;
+  pointer-events:none!important;
+  background:radial-gradient(circle at 40% 25%,rgba(232,94,24,.07),transparent 32%)!important;
+}
+
+/* INTERNAL HEADERS: emblem only, no white box, unique real image */
+body:not(.homepage) .internal-header{
+  position:relative!important;
+  min-height:112px!important;
+  background-image:
+    linear-gradient(90deg,rgba(15,20,25,.82),rgba(15,20,25,.56)),
+    var(--header-image)!important;
+  background-size:cover!important;
+  background-position:center!important;
+  border-bottom:1px solid rgba(255,255,255,.12)!important;
+  overflow:visible!important;
+}
+body:not(.homepage) .internal-header::after{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  pointer-events:none!important;
+  background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.30))!important;
+}
+body:not(.homepage) .internal-header .nav{
+  position:relative!important;
+  z-index:2!important;
+  min-height:112px!important;
+  background:transparent!important;
+}
+.header-emblem-link{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background:transparent!important;
+  padding:0!important;
+  margin:0!important;
+}
+.header-emblem{
+  display:block!important;
+  width:66px!important;
+  height:auto!important;
+  object-fit:contain!important;
+  background:transparent!important;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.34))!important;
+}
+body:not(.homepage) .internal-header .menu-toggle{
+  background:rgba(14,18,22,.74)!important;
+  backdrop-filter:blur(6px)!important;
+  border:1px solid rgba(220,224,228,.55)!important;
+}
+
+/* SHARP FOOTER BRAND WITHOUT BLACK BOX */
+.footer-brand-lockup{
+  display:flex!important;
+  align-items:center!important;
+  gap:14px!important;
+  margin-bottom:16px!important;
+  background:transparent!important;
+}
+.footer-brand-lockup img{
+  width:62px!important;
+  height:auto!important;
+  display:block!important;
+  background:transparent!important;
+  filter:none!important;
+}
+.footer-wordmark{line-height:.92!important}
+.footer-wordmark strong{
+  display:block!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:26px!important;
+  font-weight:800!important;
+  letter-spacing:-.035em!important;
+  text-transform:lowercase!important;
+  color:#f36f1b!important;
+}
+.footer-wordmark span{
+  display:block!important;
+  margin-top:3px!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:15px!important;
+  font-weight:650!important;
+  letter-spacing:.025em!important;
+  color:#c8cdd1!important;
+}
+.site-footer .footer-brand > img{display:none!important}
+
+/* PROFESSIONAL SECTOR ICONS */
+.sector-card .sector-icon{
+  width:62px!important;
+  height:62px!important;
+  margin-bottom:18px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+.sector-card .sector-icon svg{
+  width:58px!important;
+  height:58px!important;
+  fill:none!important;
+  stroke:#f58220!important;
+  stroke-width:2.2!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+}
+
+/* Continuous dark page tone */
+body:not(.homepage),
+body:not(.homepage) main,
+body:not(.homepage) .page-hero,
+body:not(.homepage) .section,
+body:not(.homepage) .section-soft,
+body:not(.homepage) .section-dark,
+body:not(.homepage) .site-footer{
+  background-color:#171c21!important;
+}
+
+body:not(.homepage) .site-header .logo{display:none!important}
+
+@media(max-width:760px){
+  .hero-brand-lockup{
+    top:4.5%!important;
+    width:92vw!important;
+  }
+  .hero-brand-emblem{
+    width:66%!important;
+  }
+  .hero-wordmark{
+    margin-top:-5%!important;
+  }
+  .hero-wordmark strong{
+    font-size:clamp(62px,17vw,92px)!important;
+  }
+  .hero-wordmark span{
+    font-size:clamp(28px,8vw,44px)!important;
+    padding-left:28%!important;
+  }
+  .homepage .hero-v4 .hero-v4-inner{
+    padding-top:49vh!important;
+  }
+
+  body:not(.homepage) .internal-header,
+  body:not(.homepage) .internal-header .nav{
+    min-height:104px!important;
+  }
+  .header-emblem{
+    width:58px!important;
+  }
+}
