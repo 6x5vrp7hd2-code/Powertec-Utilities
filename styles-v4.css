@@ -1133,3 +1133,671 @@ h2{font-size:clamp(32px,4vw,52px);margin:0 0 18px}
     transform:scale(1)!important;
   }
 }
+
+/* ==========================================================
+   V15 — CONTINUOUS DARK PAGES / CORRECT POWERTEC BRAND
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   HOMEPAGE EMBLEM
+   - actual Powertec emblem only
+   - correct aspect ratio
+   - ~15% smaller than previous version
+   - true fade in AND out
+   - modestly brighter at peak, not glowing excessively
+   ---------------------------------------------------------- */
+.hero-v4 .hero-brand-watermark{
+  position:absolute!important;
+  top:8%!important;
+  left:50%!important;
+  width:min(646px,66vw)!important; /* 15% smaller than 760px */
+  height:auto!important;
+  aspect-ratio:auto!important;
+  transform:translateX(-50%)!important;
+  display:block!important;
+  z-index:2!important;
+  pointer-events:none!important;
+  overflow:visible!important;
+}
+.hero-v4 .hero-brand-watermark img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;              /* prevents squashing */
+  max-width:none!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  opacity:0!important;
+  transform:scale(.97)!important;
+  mix-blend-mode:screen!important;
+  filter:
+    saturate(1.16)
+    brightness(1.10)
+    contrast(1.03)
+    drop-shadow(0 0 14px rgba(245,130,32,.25))!important;
+  animation:powertecTrueFadeV15 8.8s ease-in-out infinite!important;
+}
+@keyframes powertecTrueFadeV15{
+  0%{
+    opacity:0;
+    transform:scale(.97);
+  }
+  18%{
+    opacity:.18;
+    transform:scale(.985);
+  }
+  40%{
+    opacity:.52;
+    transform:scale(1);
+  }
+  52%,62%{
+    opacity:.72;
+    transform:scale(1.015);
+  }
+  80%{
+    opacity:.22;
+    transform:scale(.99);
+  }
+  100%{
+    opacity:0;
+    transform:scale(.97);
+  }
+}
+@media(max-width:760px){
+  .hero-v4 .hero-brand-watermark{
+    top:9%!important;
+    width:102vw!important;
+    height:auto!important;
+  }
+  .hero-v4 .hero-brand-watermark img{
+    height:auto!important;
+    animation:powertecTrueFadeMobileV15 8.2s ease-in-out infinite!important;
+  }
+  @keyframes powertecTrueFadeMobileV15{
+    0%{opacity:0;transform:scale(.97)}
+    20%{opacity:.16;transform:scale(.985)}
+    42%{opacity:.48;transform:scale(1)}
+    54%,64%{opacity:.68;transform:scale(1.012)}
+    82%{opacity:.20;transform:scale(.99)}
+    100%{opacity:0;transform:scale(.97)}
+  }
+}
+
+/* ----------------------------------------------------------
+   INTERNAL PAGES
+   One continuous dark visual field from top to bottom.
+   No white header bar.
+   ---------------------------------------------------------- */
+body:not(.homepage){
+  background:#14191e!important;
+  color:#e8ecef!important;
+}
+
+/* Header is part of the page, not a white strip */
+body:not(.homepage) .site-header{
+  background:#14191e!important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:none!important;
+}
+body:not(.homepage) .nav{
+  background:#14191e!important;
+}
+
+/* Actual Powertec brand image stays intact; text adapted for dark background */
+body:not(.homepage) .logo{
+  width:190px!important;
+  height:auto!important;
+  object-fit:contain!important;
+  filter:none!important;
+}
+
+/* Matching square menu box style across all pages */
+body:not(.homepage) .menu-toggle{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:50px!important;
+  height:50px!important;
+  background:#14191e!important;
+  color:#f58220!important;
+  border:1px solid rgba(220,224,228,.48)!important;
+  font-size:24px!important;
+  box-shadow:none!important;
+}
+
+/* Desktop nav remains clean; mobile dropdown follows same dark treatment */
+body:not(.homepage) .navlinks{
+  background:#14191e!important;
+}
+body:not(.homepage) .navlinks a{
+  color:#d9dde1!important;
+}
+body:not(.homepage) .navlinks a.active{
+  color:#f58220!important;
+}
+body:not(.homepage) .navlinks .enquire{
+  color:#fff!important;
+  background:#f58220!important;
+}
+@media(max-width:760px){
+  body:not(.homepage) .navlinks{
+    background:#14191e!important;
+    border:1px solid rgba(255,255,255,.10)!important;
+  }
+  body:not(.homepage) .navlinks a{
+    border-bottom:1px solid rgba(255,255,255,.09)!important;
+  }
+}
+
+/* Hero blends directly into same dark page colour */
+body:not(.homepage) .page-hero{
+  background-color:#14191e!important;
+  border:0!important;
+}
+body:not(.homepage) .page-hero:before{
+  background:linear-gradient(
+    90deg,
+    rgba(20,25,30,.94),
+    rgba(20,25,30,.58)
+  )!important;
+}
+
+/* Remove white islands — use subtle tonal variation instead */
+body:not(.homepage) .section,
+body:not(.homepage) .section-soft,
+body:not(.homepage) .authenticity,
+body:not(.homepage) .content-block,
+body:not(.homepage) .service-detail{
+  background-color:#14191e!important;
+  color:#e8ecef!important;
+}
+body:not(.homepage) .section-soft{
+  background-color:#181e24!important;
+}
+body:not(.homepage) .section-dark{
+  background:#101418!important;
+}
+
+/* Cards/panels remain distinguishable without turning page white */
+body:not(.homepage) .card,
+body:not(.homepage) .service-proof,
+body:not(.homepage) .step,
+body:not(.homepage) .project-card,
+body:not(.homepage) .sector-card{
+  background:#1b2228!important;
+  color:#e8ecef!important;
+  border-color:rgba(255,255,255,.11)!important;
+}
+body:not(.homepage) .card h2,
+body:not(.homepage) .card h3,
+body:not(.homepage) .service-proof h3,
+body:not(.homepage) h1,
+body:not(.homepage) h2,
+body:not(.homepage) h3{
+  color:#f2f4f5!important;
+}
+body:not(.homepage) p,
+body:not(.homepage) .lead,
+body:not(.homepage) li{
+  color:#c8ced3!important;
+}
+
+/* Existing Powertec orange + blue graphics stay visible on dark field */
+body:not(.homepage) .section:not(.section-dark)::before,
+body:not(.homepage) .authenticity::before,
+body:not(.homepage) .content-block::before,
+body:not(.homepage) .service-detail::before{
+  opacity:.82!important;
+}
+body:not(.homepage) .section:not(.section-dark)::after,
+body:not(.homepage) .authenticity::after{
+  opacity:.12!important;
+}
+
+/* Footer continues the same field, no tonal break */
+body:not(.homepage) .site-footer{
+  background:#101418!important;
+  border-top:1px solid rgba(255,255,255,.10)!important;
+}
+body:not(.homepage) .site-footer,
+body:not(.homepage) .site-footer p,
+body:not(.homepage) .site-footer a{
+  color:#c8ced3!important;
+}
+
+/* =====================================================================
+   V16 — FINAL BRAND CORRECTION
+   ===================================================================== */
+
+/* ---------- HOME PAGE: authentic emblem only ---------- */
+.homepage .site-header{display:none!important;}
+
+.hero-v4{
+  position:relative!important;
+  isolation:isolate!important;
+}
+
+.hero-v4 .hero-brand-watermark{
+  position:absolute!important;
+  top:8%!important;
+  left:50%!important;
+  width:min(550px,56vw)!important;
+  height:auto!important;
+  transform:translateX(-50%)!important;
+  display:block!important;
+  z-index:2!important;
+  overflow:visible!important;
+  pointer-events:none!important;
+}
+
+.hero-v4 .hero-brand-watermark img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;            /* PRESERVES ORIGINAL ASPECT RATIO */
+  max-width:none!important;
+  object-fit:contain!important;
+  opacity:0!important;
+  mix-blend-mode:screen!important;
+  filter:
+    saturate(1.12)
+    brightness(1.10)
+    contrast(1.02)
+    drop-shadow(0 0 12px rgba(245,130,32,.22))!important;
+  transform:scale(.985)!important;
+  animation:powertecEmblemFadeV16 8.5s ease-in-out infinite!important;
+}
+
+@keyframes powertecEmblemFadeV16{
+  0%   {opacity:0;    transform:scale(.985);}
+  18%  {opacity:.16; transform:scale(.992);}
+  40%  {opacity:.46; transform:scale(1);}
+  52%  {opacity:.64; transform:scale(1.006);}
+  64%  {opacity:.64; transform:scale(1.006);}
+  82%  {opacity:.18; transform:scale(.994);}
+  100% {opacity:0;    transform:scale(.985);}
+}
+
+.hero-v4::before{
+  z-index:0!important;
+}
+.hero-v4::after{
+  z-index:1!important;
+}
+.hero-v4 .hero-v4-inner{
+  position:relative!important;
+  z-index:3!important;
+}
+
+/* Homepage square menu remains */
+.home-menu-shell{
+  position:fixed!important;
+  top:18px!important;
+  left:18px!important;
+  z-index:500!important;
+}
+.home-menu-button{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:54px!important;
+  height:54px!important;
+  background:rgba(14,18,22,.92)!important;
+  color:#f58220!important;
+  border:1px solid rgba(208,214,219,.48)!important;
+  font-size:26px!important;
+  box-shadow:none!important;
+}
+
+/* ---------- ALL INTERNAL PAGES: ONE CONTINUOUS COLOUR ---------- */
+body:not(.homepage){
+  background:#171c21!important;
+  color:#d7dce0!important;
+}
+
+body:not(.homepage) .site-header,
+body:not(.homepage) .nav,
+body:not(.homepage) main,
+body:not(.homepage) .page-hero,
+body:not(.homepage) .section,
+body:not(.homepage) .section-soft,
+body:not(.homepage) .section-dark,
+body:not(.homepage) .authenticity,
+body:not(.homepage) .content-block,
+body:not(.homepage) .service-detail,
+body:not(.homepage) .site-footer{
+  background-color:#171c21!important;
+  background-image:none!important;
+  color:#d7dce0!important;
+}
+
+/* No white header strip */
+body:not(.homepage) .site-header{
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:none!important;
+}
+
+/* Actual Powertec header mark; no white box */
+body:not(.homepage) .logo{
+  display:block!important;
+  width:178px!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  background:transparent!important;
+  filter:none!important;
+}
+
+/* Same menu box style as homepage on every page */
+body:not(.homepage) .menu-toggle{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:50px!important;
+  height:50px!important;
+  background:#171c21!important;
+  color:#f58220!important;
+  border:1px solid rgba(208,214,219,.48)!important;
+  font-size:24px!important;
+  box-shadow:none!important;
+}
+
+/* Navigation contrast */
+body:not(.homepage) .navlinks{
+  background:#171c21!important;
+}
+body:not(.homepage) .navlinks a{
+  color:#d0d6da!important;
+}
+body:not(.homepage) .navlinks a.active{
+  color:#f58220!important;
+}
+body:not(.homepage) .navlinks .enquire{
+  color:#fff!important;
+  background:#f58220!important;
+}
+
+/* Hero stays on same base colour; photo remains as content, not a white header */
+body:not(.homepage) .page-hero{
+  border:0!important;
+}
+body:not(.homepage) .page-hero::before{
+  background:linear-gradient(
+    90deg,
+    rgba(23,28,33,.94),
+    rgba(23,28,33,.70) 55%,
+    rgba(23,28,33,.48)
+  )!important;
+}
+
+/* Typography on dark field */
+body:not(.homepage) h1,
+body:not(.homepage) h2,
+body:not(.homepage) h3,
+body:not(.homepage) h4{
+  color:#f1f3f4!important;
+}
+body:not(.homepage) p,
+body:not(.homepage) li,
+body:not(.homepage) .lead{
+  color:#c7cdd1!important;
+}
+body:not(.homepage) .eyebrow{
+  color:#f58220!important;
+}
+
+/* Cards/panels use slight tonal lift, not white */
+body:not(.homepage) .card,
+body:not(.homepage) .service-proof,
+body:not(.homepage) .step,
+body:not(.homepage) .project-card,
+body:not(.homepage) .sector-card,
+body:not(.homepage) .quote{
+  background:#1d242a!important;
+  color:#d7dce0!important;
+  border-color:rgba(255,255,255,.11)!important;
+}
+
+/* Keep background graphics but make them part of the same charcoal field */
+body:not(.homepage) .section::before,
+body:not(.homepage) .authenticity::before,
+body:not(.homepage) .content-block::before,
+body:not(.homepage) .service-detail::before{
+  background:
+    radial-gradient(circle at 94% 10%,rgba(245,130,32,.075),transparent 19%),
+    radial-gradient(circle at 5% 88%,rgba(109,120,130,.07),transparent 21%),
+    linear-gradient(120deg,transparent 0 65%,rgba(245,130,32,.03) 65% 66.2%,transparent 66.2%),
+    linear-gradient(58deg,transparent 0 77%,rgba(150,158,166,.025) 77% 78.2%,transparent 78.2%)!important;
+}
+body:not(.homepage) .section::after,
+body:not(.homepage) .authenticity::after{
+  opacity:.07!important;
+}
+
+/* Footer continues exactly the same colour */
+body:not(.homepage) .site-footer{
+  border-top:1px solid rgba(255,255,255,.10)!important;
+}
+body:not(.homepage) .site-footer p,
+body:not(.homepage) .site-footer a{
+  color:#bfc6cb!important;
+}
+
+/* Mobile */
+@media(max-width:760px){
+  .hero-v4 .hero-brand-watermark{
+    top:9%!important;
+    width:86vw!important;
+    height:auto!important;
+  }
+  .hero-v4 .hero-brand-watermark img{
+    width:100%!important;
+    height:auto!important;
+    animation:powertecEmblemFadeMobileV16 8s ease-in-out infinite!important;
+  }
+  @keyframes powertecEmblemFadeMobileV16{
+    0%   {opacity:0;    transform:scale(.985);}
+    20%  {opacity:.14; transform:scale(.992);}
+    42%  {opacity:.42; transform:scale(1);}
+    54%  {opacity:.60; transform:scale(1.006);}
+    66%  {opacity:.60; transform:scale(1.006);}
+    84%  {opacity:.16; transform:scale(.994);}
+    100% {opacity:0;    transform:scale(.985);}
+  }
+
+  body:not(.homepage) .site-header,
+  body:not(.homepage) .nav{
+    background:#171c21!important;
+  }
+  body:not(.homepage) .navlinks{
+    background:#171c21!important;
+    border:1px solid rgba(255,255,255,.10)!important;
+  }
+  body:not(.homepage) .navlinks a{
+    border-bottom:1px solid rgba(255,255,255,.08)!important;
+  }
+}
+
+/* ==========================================================
+   V17 — HOMEPAGE EMBLEM FINAL TUNING
+   Slightly brighter at peak, true fade in/out, exact shape retained
+   ========================================================== */
+
+.hero-v4 .hero-brand-watermark{
+  width:min(550px,56vw)!important;
+  height:auto!important;
+}
+
+.hero-v4 .hero-brand-watermark img{
+  width:100%!important;
+  height:auto!important;
+  object-fit:contain!important;
+  opacity:0!important;
+  transform:scale(.985)!important;
+  mix-blend-mode:screen!important;
+  filter:
+    saturate(1.18)
+    brightness(1.16)
+    contrast(1.03)
+    drop-shadow(0 0 14px rgba(245,130,32,.26))!important;
+  animation:powertecEmblemFadeV17 8.4s ease-in-out infinite!important;
+}
+
+@keyframes powertecEmblemFadeV17{
+  0%{
+    opacity:0;
+    transform:scale(.985);
+  }
+  16%{
+    opacity:.10;
+    transform:scale(.992);
+  }
+  34%{
+    opacity:.34;
+    transform:scale(1);
+  }
+  48%{
+    opacity:.60;
+    transform:scale(1.005);
+  }
+  58%,66%{
+    opacity:.74;
+    transform:scale(1.008);
+  }
+  80%{
+    opacity:.26;
+    transform:scale(.996);
+  }
+  92%{
+    opacity:.08;
+    transform:scale(.99);
+  }
+  100%{
+    opacity:0;
+    transform:scale(.985);
+  }
+}
+
+@media(max-width:760px){
+  .hero-v4 .hero-brand-watermark{
+    width:86vw!important;
+    height:auto!important;
+  }
+
+  .hero-v4 .hero-brand-watermark img{
+    width:100%!important;
+    height:auto!important;
+    animation:powertecEmblemFadeMobileV17 8s ease-in-out infinite!important;
+  }
+
+  @keyframes powertecEmblemFadeMobileV17{
+    0%{
+      opacity:0;
+      transform:scale(.985);
+    }
+    18%{
+      opacity:.09;
+      transform:scale(.992);
+    }
+    36%{
+      opacity:.32;
+      transform:scale(1);
+    }
+    50%{
+      opacity:.58;
+      transform:scale(1.005);
+    }
+    60%,68%{
+      opacity:.72;
+      transform:scale(1.008);
+    }
+    82%{
+      opacity:.24;
+      transform:scale(.996);
+    }
+    94%{
+      opacity:.07;
+      transform:scale(.99);
+    }
+    100%{
+      opacity:0;
+      transform:scale(.985);
+    }
+  }
+}
+
+/* ==========================================================
+   V18 — INTERNAL PAGE HEADER CORRECTION
+   ========================================================== */
+
+/* Same continuous background from top to bottom */
+body:not(.homepage),
+body:not(.homepage) .site-header,
+body:not(.homepage) .nav,
+body:not(.homepage) main,
+body:not(.homepage) .page-hero,
+body:not(.homepage) .section,
+body:not(.homepage) .section-soft,
+body:not(.homepage) .section-dark,
+body:not(.homepage) .authenticity,
+body:not(.homepage) .content-block,
+body:not(.homepage) .service-detail,
+body:not(.homepage) .site-footer{
+  background-color:#171c21!important;
+}
+
+/* Absolutely remove any white header strip or white backing */
+body:not(.homepage) .site-header,
+body:not(.homepage) .nav{
+  background:#171c21!important;
+  background-image:none!important;
+  box-shadow:none!important;
+}
+
+/* Keep the logo and emblem the SAME SIZE on every internal page */
+body:not(.homepage) .site-header .logo{
+  width:178px!important;
+  height:auto!important;
+  max-width:178px!important;
+  min-width:178px!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:left center!important;
+  background:transparent!important;
+  border:0!important;
+  padding:0!important;
+  margin:0!important;
+  filter:none!important;
+  opacity:1!important;
+}
+
+/* Preserve the same menu-box style on every page */
+body:not(.homepage) .menu-toggle{
+  width:50px!important;
+  height:50px!important;
+  min-width:50px!important;
+  min-height:50px!important;
+  background:#171c21!important;
+  color:#f58220!important;
+  border:1px solid rgba(210,214,218,.48)!important;
+  box-shadow:none!important;
+}
+
+/* Keep header spacing consistent across every page */
+body:not(.homepage) .nav{
+  min-height:78px!important;
+  display:flex!important;
+  align-items:center!important;
+}
+
+/* Mobile retains identical brand proportions */
+@media(max-width:760px){
+  body:not(.homepage) .site-header .logo{
+    width:178px!important;
+    max-width:178px!important;
+    min-width:178px!important;
+    height:auto!important;
+  }
+  body:not(.homepage) .menu-toggle{
+    width:50px!important;
+    height:50px!important;
+  }
+}
