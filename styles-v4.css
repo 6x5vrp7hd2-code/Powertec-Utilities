@@ -2691,3 +2691,80 @@ body:not(.homepage) .text-link{
     width:58px!important;
   }
 }
+
+/* =====================================================================
+   V23 — VISUAL FIX / MATCH APPROVED DARK MOCKUP
+   ===================================================================== */
+:root{--pt-bg:#081016;--pt-panel:#111a21;--pt-orange:#f47a12;--pt-copy:#c9d0d4;}
+
+/* HOME: logo appears with a clear one-time fade and then stays visible */
+.hero-brand-lockup{
+  top:32px!important; left:28px!important; width:min(455px,72vw)!important;
+  grid-template-columns:108px 1fr!important; column-gap:14px!important;
+  opacity:0!important; animation:ptBrandFadeIn 2.2s ease-out .15s forwards!important;
+}
+@keyframes ptBrandFadeIn{0%{opacity:0;transform:translateY(-10px)}35%{opacity:.35}100%{opacity:1;transform:translateY(0)}}
+.hero-brand-emblem{width:108px!important;height:auto!important;object-fit:contain!important;filter:none!important}
+.hero-wordmark strong{font-size:60px!important}.hero-wordmark span{font-size:27px!important;color:#bec4c8!important}
+.homepage .hero-v4 .hero-v4-inner{padding-top:260px!important;min-height:100svh!important}
+.homepage .hero-v4-copy{width:min(520px,48vw)!important}
+.homepage .hero-v4-copy h1{color:#fff!important}
+.homepage .hero-kicker{color:#fff!important}
+.homepage .hero-v4-copy p{color:#d4d9dc!important}
+
+/* HOME: remove old white-strip/card styling and match dark illustration */
+.homepage .stats{display:none!important}
+.homepage .section,.homepage .section-soft,.homepage .authenticity{background:var(--pt-bg)!important;color:#fff!important}
+.homepage .section-dark{background:#0c151b!important}
+.homepage .section-head h2,.homepage .auth-copy h2,.homepage .image-split h2{color:#fff!important}
+.homepage .section-head .lead,.homepage .auth-copy p,.homepage .image-split p{color:#c7cdd1!important}
+.homepage .card{background:#111a21!important;border:1px solid rgba(255,255,255,.13)!important;color:#fff!important;box-shadow:none!important}
+.homepage .card h3{color:#fff!important}.homepage .card p{color:#c7cdd1!important}
+.homepage .card .icon{color:var(--pt-orange)!important}
+.homepage .section::before,.homepage .section-soft::before,.homepage .authenticity::before{opacity:.18!important}
+
+/* Internal pages: all major text readable on dark background */
+body:not(.homepage) .section-head h2,
+body:not(.homepage) .section-head h3,
+body:not(.homepage) .service-detail h2,
+body:not(.homepage) .service-detail h3,
+body:not(.homepage) .auth-copy h2,
+body:not(.homepage) .content-block h2,
+body:not(.homepage) .content-block h3{color:#f4f6f7!important}
+body:not(.homepage) .section-head .lead,
+body:not(.homepage) .service-detail p,
+body:not(.homepage) .auth-copy p,
+body:not(.homepage) .content-block p{color:#c8ced2!important}
+
+/* Internal cards must never revert to white */
+body:not(.homepage) .card,
+body:not(.homepage) .service-proof,
+body:not(.homepage) .step,
+body:not(.homepage) .sector-card,
+body:not(.homepage) .project-card,
+body:not(.homepage) .principle,
+body:not(.homepage) .value-card{
+  background:#111a21!important;color:#fff!important;border:1px solid rgba(255,255,255,.12)!important;
+}
+body:not(.homepage) .card h2,body:not(.homepage) .card h3,
+body:not(.homepage) .service-proof h2,body:not(.homepage) .service-proof h3,
+body:not(.homepage) .step h3{color:#fff!important}
+body:not(.homepage) .card p,body:not(.homepage) .service-proof p,body:not(.homepage) .step p{color:#c8ced2!important}
+
+/* Footer branding: absolutely no boxed background */
+.site-footer,.site-footer .wrap,.footer-top,.footer-brand,.footer-brand-lockup,.footer-brand-lockup img,.footer-wordmark{
+ background:transparent!important;background-color:transparent!important;background-image:none!important;box-shadow:none!important;border-radius:0!important;
+}
+.footer-brand-lockup{padding:0!important;border:0!important}
+.footer-brand-lockup img{width:62px!important;height:auto!important;mix-blend-mode:normal!important}
+
+/* Header emblem: transparent, crisp, no box */
+.header-emblem-link,.header-emblem{background:transparent!important;background-image:none!important;box-shadow:none!important;border:0!important}
+.header-emblem{width:62px!important;height:auto!important;filter:none!important}
+
+@media(max-width:760px){
+ .hero-brand-lockup{top:26px!important;left:22px!important;width:310px!important;max-width:calc(100vw - 92px)!important;grid-template-columns:76px 1fr!important;column-gap:10px!important}
+ .hero-brand-emblem{width:76px!important}.hero-wordmark strong{font-size:41px!important}.hero-wordmark span{font-size:19px!important}
+ .homepage .hero-v4 .hero-v4-inner{padding-top:210px!important;padding-left:24px!important;padding-right:24px!important}
+ .homepage .hero-v4-copy{width:100%!important}
+}
