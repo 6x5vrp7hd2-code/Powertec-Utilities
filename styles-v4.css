@@ -1801,3 +1801,130 @@ body:not(.homepage) .nav{
     height:50px!important;
   }
 }
+
+/* ==========================================================
+   V19 — HEADER TRANSPARENCY + HOMEPAGE EMBLEM VISIBILITY
+   ========================================================== */
+
+/* ---------- INTERNAL PAGE HEADER ---------- */
+/* Absolutely no white header / logo box */
+body:not(.homepage) .site-header,
+body:not(.homepage) .site-header .nav,
+body:not(.homepage) .site-header .wrap,
+body:not(.homepage) .site-header a{
+  background-color:#171c21!important;
+  background-image:none!important;
+}
+
+/* Keep exactly the same logo size on every internal page */
+body:not(.homepage) .site-header .logo{
+  display:block!important;
+  width:178px!important;
+  min-width:178px!important;
+  max-width:178px!important;
+  height:auto!important;
+  max-height:none!important;
+  padding:0!important;
+  margin:0!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  filter:none!important;
+  opacity:1!important;
+  object-fit:contain!important;
+}
+
+/* ---------- HOMEPAGE EMBLEM ---------- */
+/* Authentic emblem shape: width defines size; height ALWAYS auto */
+.hero-v4 .hero-brand-watermark{
+  position:absolute!important;
+  top:8%!important;
+  left:50%!important;
+  width:min(550px,56vw)!important;
+  height:auto!important;
+  transform:translateX(-50%)!important;
+  z-index:2!important;
+  pointer-events:none!important;
+  overflow:visible!important;
+}
+
+.hero-v4 .hero-brand-watermark img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-width:none!important;
+  object-fit:contain!important;
+  object-position:center!important;
+
+  /* Slightly brighter than the version the user approved */
+  filter:
+    saturate(1.18)
+    brightness(1.17)
+    contrast(1.03)
+    drop-shadow(0 0 14px rgba(245,130,32,.27))!important;
+
+  mix-blend-mode:screen!important;
+
+  /* IMPORTANT: emblem is visible immediately when page opens */
+  opacity:.74!important;
+
+  /* No scaling animation: preserves the exact original emblem shape */
+  transform:none!important;
+
+  animation:powertecEmblemTrueFadeV19 8s ease-in-out infinite!important;
+}
+
+/* Starts visible, fades completely away, then fades back to full visibility */
+@keyframes powertecEmblemTrueFadeV19{
+  0%   { opacity:.74; }
+  18%  { opacity:.48; }
+  34%  { opacity:.12; }
+  42%  { opacity:0; }
+  52%  { opacity:0; }
+  66%  { opacity:.26; }
+  82%  { opacity:.60; }
+  100% { opacity:.74; }
+}
+
+/* Hero layers: background < emblem < content */
+.hero-v4::before{z-index:0!important;}
+.hero-v4::after{z-index:1!important;}
+.hero-v4 .hero-v4-inner{
+  position:relative!important;
+  z-index:3!important;
+}
+
+@media(max-width:760px){
+  .hero-v4 .hero-brand-watermark{
+    top:9%!important;
+    width:86vw!important;
+    height:auto!important;
+  }
+
+  .hero-v4 .hero-brand-watermark img{
+    width:100%!important;
+    height:auto!important;
+    opacity:.74!important;
+    transform:none!important;
+    animation:powertecEmblemTrueFadeMobileV19 8s ease-in-out infinite!important;
+  }
+
+  @keyframes powertecEmblemTrueFadeMobileV19{
+    0%   { opacity:.74; }
+    18%  { opacity:.46; }
+    34%  { opacity:.10; }
+    42%  { opacity:0; }
+    52%  { opacity:0; }
+    66%  { opacity:.24; }
+    82%  { opacity:.58; }
+    100% { opacity:.74; }
+  }
+}
+
+/* Even with reduced-motion enabled, keep emblem visible */
+@media(prefers-reduced-motion:reduce){
+  .hero-v4 .hero-brand-watermark img{
+    animation:none!important;
+    opacity:.70!important;
+  }
+}
